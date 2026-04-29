@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NL → SQL App</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            background: #22c55e;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NL → SQL System 🚀</h1>
+
+    <form method="POST">
+        <input type="text" name="question" placeholder="Ask something..." required>
+        <br>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if query %}
+        <h3>Question:</h3>
+        <p>{{ query }}</p>
+    {% endif %}
+
+    {% if result %}
+        <div class="result">
+            {{ result }}
+        </div>
+    {% endif %}
+
+</body>
+</html>
